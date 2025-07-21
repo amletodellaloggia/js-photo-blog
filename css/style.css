@@ -25,9 +25,11 @@ header {
 /* Main */
 
 main {
-	height: 100vh;
 	background-image: url(/img/cork.png);
-	background-size: 40%
+  background-size: 40%;
+  background-position: center;
+  background-repeat: repeat;
+  padding-bottom: 3rem;
 }
 
 .card {
