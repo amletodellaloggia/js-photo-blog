@@ -36,6 +36,10 @@ main {
   position: relative;
 }
 
+.card-body {
+	padding-top: 0;
+}
+
 .card-img-top {
   padding: 15px;
   display: block;
