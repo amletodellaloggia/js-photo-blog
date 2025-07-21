@@ -5,6 +5,8 @@
 	box-sizing: border-box;
 }
 
+/* Header */
+
 h2 {
 	font-family: 'Edu Tas Beginner';
 	font-weight:bold;
@@ -14,14 +16,28 @@ h2 {
 }
 
 header {
-	padding: 20px;
+	padding: 10px;
 	height: 100px;
 	background-image: url(/img/wall.png);
 	background-size: 30%
 }
+
+/* Main */
 
 main {
 	height: 100vh;
 	background-image: url(/img/cork.png);
 	background-size: 40%
 }
+
+.card {
+	border-radius: 0px;
+ }
+
+.card-img-top {
+	padding: 15px;
+}
+
+ .card-text {
+	font-family: 'Edu Tas Beginner';
+ }
