@@ -4,3 +4,18 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+h2 {
+	font-family: 'Edu Tas Beginner';
+	font-weight:bold;
+	font-size: 3rem;
+	text-align: center;
+	color: black;
+}
+
+header {
+	padding: 20px;
+	height: 100px;
+	background-image: url(/img/wall.png);
+	background-size: 20%
+}
