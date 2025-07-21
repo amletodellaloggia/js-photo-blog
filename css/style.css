@@ -17,5 +17,11 @@ header {
 	padding: 20px;
 	height: 100px;
 	background-image: url(/img/wall.png);
-	background-size: 20%
+	background-size: 30%
+}
+
+main {
+	height: 100vh;
+	background-image: url(/img/cork.png);
+	background-size: 40%
 }
