@@ -32,10 +32,19 @@ main {
 
 .card {
 	border-radius: 0px;
+	position: relative;
  }
 
 .card-img-top {
 	padding: 15px;
+	display: block;
+}
+
+.pin-img-top {
+	position: absolute;
+	left: 50%;
+	top: -10px;
+	transform: translate(-50%);
 }
 
  .card-text {
