@@ -5,21 +5,22 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
 
   // Creo dinamicamente una colonna (mi servo di Bootstrap) da appendere alla riga dell'HTML -PER OGNI- elemento dell'array
   data.forEach((picture) => {
-	  const col = document.createElement("div");
-	  col.className = "col";
-	
-	// Inserisco all’interno della colonna una card
-    // Nell’immagine metto l’URL fornito dall’API, il testo sarà recuperato sempre dall'API sfruttando title  
+    const col = document.createElement("div");
+    col.className = "col";
+
+    // Inserisco all’interno della colonna una card
+    // Nell’immagine metto l’URL fornito dall’API, il testo sarà recuperato sempre dall'API sfruttando title
     col.innerHTML = `
-        <div class="card h-100">
-          <img src="${picture.url}" class="card-img-top" alt="${
+  <div class="card h-100" style="position: relative;">
+    <img src="${picture.url}" class="card-img-top" alt="${
       picture.title || "Foto"
     }">
-          <div class="card-body">
-            <p class="card-text">${picture.title || ""}</p>
-          </div>
-        </div>
-      `;
+    <img src="/img/pin.svg" class="pin-img-top" alt="pin">
+    <div class="card-body">
+      <p class="card-text">${picture.title || ""}</p>
+    </div>
+  </div>
+`;
     // Infine aggiungo al contenitore la colonna, così viene visualizzata in pagina
     container.appendChild(col);
   });
