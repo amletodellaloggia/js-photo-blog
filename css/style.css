@@ -39,8 +39,6 @@ header {
 .overlay-content {
   position: relative;
   text-align: center;
-  top: 5%;
-  left: 5%;
   max-width: 90%;
   max-height: 90%;
 }

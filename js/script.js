@@ -26,5 +26,22 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
 `;
     // Infine aggiungo la colonna al contenitore, così viene visualizzata in pagina
     container.appendChild(col);
+    
+    // Aggiungo un EventListener per il click sulle card, questo mi permette di fare apparire l'overlay
+    const card = col.querySelector(".card");
+    card.addEventListener("click", () => {
+      document.getElementById("custom-overlay").classList.remove("d-none");
+    
+      // Punto all'immagine da mostrare
+      const overlayImg = document.querySelector("#custom-overlay img");
+      overlayImg.src = "/img/summer-card.jpg"; 
+    });
+  
   });
+});
+
+
+// Funzionalità di chiusura overlay
+document.getElementById("close-overlay").addEventListener("click", () => {
+  document.getElementById("custom-overlay").classList.add("d-none");
 });
