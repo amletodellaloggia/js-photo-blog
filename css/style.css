@@ -63,19 +63,30 @@ body {
 
 /* Cards */
 
+.col {
+  transition: all 0.5s ease;
+}
+
 .card {
   border-radius: 0px;
   position: relative;
+  transition: all 0.5s ease;
 }
 
 .card-body {
   padding-top: 0;
+  transition: all 0.5s ease;
+}
+
+.card-text {
+  transition: all 0.5s ease;
 }
 
 .card-img-top {
   padding: 15px;
   display: block;
   object-fit: contain;
+  transition: all 0.5s ease;
 }
 
 .pin-img-top {
@@ -101,6 +112,7 @@ header h3 {
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
+  transition: font-size 0.4s ease;
 }
 
 @media (min-width: 768px) {
