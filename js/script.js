@@ -5,6 +5,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
   const container = document.getElementById("pictures-container"); // Punto al container del DOM dove voglio inserire le immagini
 
   // Creo dinamicamente una colonna (mi servo di Bootstrap) da appendere alla riga dell'HTML -PER OGNI- elemento dell'array
+  // La variabile col verrà creata come div, il nome sarà quindi col
   data.forEach((picture) => {
     const col = document.createElement("div");
     col.className = "col";
