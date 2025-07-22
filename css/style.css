@@ -52,8 +52,14 @@ main {
   transform: translate(-50%);
 }
 
-.card-text {
+#picture-date {
+  font-family: "Sometype Mono";
+  margin-bottom: 0;
+}
+
+#picture-title {
   font-family: "Edu Tas Beginner";
+  font-size: 1.5rem;
 }
 
 /* Responsive H2 */
