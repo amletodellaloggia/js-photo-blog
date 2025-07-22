@@ -10,7 +10,7 @@
 h3 {
   font-family: "Edu Tas Beginner";
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   color: black;
 }
@@ -95,22 +95,22 @@ body {
   font-size: 1.2rem;
 }
 
-/* Responsive H2 */
+/* Responsive H3 */
 
 header h3 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
   text-align: center;
 }
 
 @media (min-width: 768px) {
   header h3 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
 
 @media (min-width: 1200px) {
   header h3 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
