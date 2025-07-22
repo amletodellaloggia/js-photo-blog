@@ -11,35 +11,39 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
 
     // Inserisco all’interno della colonna una card
     // Nell’immagine metto l’URL fornito dall’API, il testo sarà recuperato sempre dall'API sfruttando title
-    // Aggiungo direttamente in HTML la card 
+    // Aggiungo direttamente in HTML la card
     col.innerHTML = `
   <div class="card h-100" style="position: relative;">
-    <img src="${picture.url}" class="card-img-top" alt="${
-      picture.title 
-    }"> 
+    <img src="${picture.url}" class="card-img-top" alt="${picture.title}"> 
     <img src="/img/pin.svg" class="pin-img-top" alt="pin">
     <div class="card-body">
       <p class="card-text" id="picture-date">${picture.date || ""}</p>
-      <p class="card-text fw-bold text-uppercase" id="picture-title">${picture.title || ""}</p>
+      <p class="card-text fw-bold text-uppercase" id="picture-title">${
+        picture.title || ""
+      }</p>
     </div>
   </div>
 `;
     // Infine aggiungo la colonna al contenitore, così viene visualizzata in pagina
     container.appendChild(col);
-    
-    // Aggiungo un EventListener per il click sulle card, questo mi permette di fare apparire l'overlay
-    const card = col.querySelector(".card");
-    card.addEventListener("click", () => {
-      document.getElementById("custom-overlay").classList.remove("d-none");
-    
-      // Punto all'immagine da mostrare
-      const overlayImg = document.querySelector("#custom-overlay img");
-      overlayImg.src = "/img/summer-card.jpg"; 
+
+    // Seleziono l'immagine della card
+    const imgElement = col.querySelector(".card-img-top");
+
+    // Quando clicco l'immagine, mostro l'overlay con quella stessa immagine
+    imgElement.addEventListener("click", () => {
+      const overlay = document.getElementById("custom-overlay");
+      const overlayImg = overlay.querySelector("img");
+
+      // Metto l'immagine cliccata nell'overlay
+      overlayImg.src = picture.url;
+      overlayImg.alt = picture.title || "Foto ingrandita";
+
+      // Mostro l'overlay
+      overlay.classList.remove("d-none");
     });
-  
   });
 });
-
 
 // Funzionalità di chiusura overlay
 document.getElementById("close-overlay").addEventListener("click", () => {
