@@ -9,9 +9,28 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
     const col = document.createElement("div");
     col.className = "col";
 
-    // Inserisco all’interno della colonna una card
-    // Nell’immagine metto l’URL fornito dall’API, il testo sarà recuperato sempre dall'API sfruttando title
-    // Aggiungo direttamente in HTML la card
+    // Alternative al forEach
+
+  // Alternativa (tentativo): Ciclo for...of
+    // for (const picture of data) {
+    // const col = document.createElement("div");
+    // col.className = "col"
+
+  // Alternativa (tentativo) Ciclo for
+    // for (let i = 0; i < data.length; i++) {
+    //   const picture = data[i];
+    //   const col = document.createElement("div");
+    //   col.className = "col";
+  
+  // Alternativa (tentativo, non testato): data.map
+      // data.map((picture) => {
+      // const col = document.createElement("div");
+      // col.className = "col";
+
+
+  // Inserisco all’interno della colonna una card
+  // Nell’immagine metto l’URL fornito dall’API, il testo sarà recuperato sempre dall'API sfruttando title
+  // Aggiungo direttamente in HTML la card
     col.innerHTML = `
   <div class="card h-100" style="position: relative;">
     <img src="${picture.url}" class="card-img-top" alt="${picture.title}"> 
