@@ -5,7 +5,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
 
   const container = document.getElementById("pictures-container"); // Punto al container del DOM dove voglio inserire le immagini
 
-  // Creo dinamicamente una colonna (mi servo di Bootstrap) da appendere alla riga dell'HTML -PER OGNI- elemento dell'array
+  // Con forEach prendo ogni elemento dell'array eseguendo la funzione su di esso, in questo specifico caso le picture verranno inserite in un div che creo dinamicamente con createElement e che conterrà la card, e le assegno il nome col (che fa riferimento alla classe Bootstrap)
   data.forEach((picture) => {
     const col = document.createElement("div");
     col.className = "col";
@@ -28,7 +28,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
                   //   const col = document.createElement("div");
                   //   col.className = "col";
 
-    // Inserisco una card all’interno della colonna
+    // Inserisco una card all’interno della col appena creata, usando innerHtml
     // Nell’immagine metto l’URL fornito dall’API, il testo sarà recuperato sempre dall'API sfruttando title
     // Aggiungo direttamente in HTML la card
         col.innerHTML = `
@@ -44,19 +44,20 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
       </div>
     `;
 
-    // Infine aggiungo la colonna al contenitore, così viene visualizzata in pagina
+    // Infine aggiungo la colonna al contenitore div creato prima, così viene visualizzata in pagina
     container.appendChild(col);
 
     // OVERLAY
     // Seleziono l'immagine della card
     const imgElement = col.querySelector(".card-img-top");
 
-    // Quando clicco l'immagine, mostro l'overlay con quella stessa immagine
+    // Quando clicco l'immagine, mostro l'overlay con quella stessa immagine, evitando quindi di selezionare TUTTE le immagini
     imgElement.addEventListener("click", () => {
       const overlay = document.getElementById("custom-overlay");
       const overlayImg = overlay.querySelector("img");
 
       // Metto l'immagine cliccata nell'overlay
+      // Le assegno lo stesso src e alt della foto che è stata cliccata, così l'overlay potrà mostrare la foto in grande
       overlayImg.src = picture.url;
       overlayImg.alt = picture.title || "Foto ingrandita";
 
@@ -67,7 +68,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
 });
 
     // CHIUSURA OVERLAY
-    // Al click, con eventListener aggiungo d-none
+    // Al click, con eventListener aggiungo d-none per far sparire l'overlay
     document.getElementById("close-overlay").addEventListener("click", () => {
       document.getElementById("custom-overlay").classList.add("d-none");
     });
