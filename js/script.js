@@ -9,23 +9,24 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
     const col = document.createElement("div");
     col.className = "col";
 
-    // Alternative al forEach
+    // ALTERNATIVE FOR EACH
+    
+    // Alternativa (tentativo): data.map
+        // data.map((picture) => {
+        // const col = document.createElement("div");
+        // col.className = "col";
 
-  // Alternativa (tentativo): Ciclo for...of
-    // for (const picture of data) {
-    // const col = document.createElement("div");
-    // col.className = "col"
-
-  // Alternativa (tentativo) Ciclo for
-    // for (let i = 0; i < data.length; i++) {
-    //   const picture = data[i];
-    //   const col = document.createElement("div");
-    //   col.className = "col";
-  
-  // Alternativa (tentativo, non testato): data.map
-      // data.map((picture) => {
+    // Alternativa (tentativo): Ciclo for...of
+      // for (const picture of data) {
       // const col = document.createElement("div");
-      // col.className = "col";
+      // col.className = "col"
+
+    // Alternativa (tentativo) Ciclo for
+      // for (let i = 0; i < data.length; i++) {
+      //   const picture = data[i];
+      //   const col = document.createElement("div");
+      //   col.className = "col";
+  
 
 
   // Inserisco all’interno della colonna una card
@@ -43,6 +44,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
     </div>
   </div>
 `;
+    
     // Infine aggiungo la colonna al contenitore, così viene visualizzata in pagina
     container.appendChild(col);
 
@@ -61,10 +63,14 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
       // Mostro l'overlay
       overlay.classList.remove("d-none");
     });
-  });
+  }
+);
+
 });
 
 // Funzionalità di chiusura overlay
 document.getElementById("close-overlay").addEventListener("click", () => {
   document.getElementById("custom-overlay").classList.add("d-none");
 });
+
+// })
