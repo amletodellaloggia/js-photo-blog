@@ -10,25 +10,25 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
     const col = document.createElement("div");
     col.className = "col";
 
-    // ALTERNATIVE FOR EACH
+                  // ALTERNATIVE FOR EACH
 
-    // Alternativa (tentativo): data.map
-    // data.map((picture) => {
-    // const col = document.createElement("div");
-    // col.className = "col";
+                  // Alternativa (tentativo): data.map
+                  // data.map((picture) => {
+                  // const col = document.createElement("div");
+                  // col.className = "col";
 
-    // Alternativa (tentativo): Ciclo for...of
-    // for (const picture of data) {
-    // const col = document.createElement("div");
-    // col.className = "col"
+                  // Alternativa (tentativo): Ciclo for...of
+                  // for (const picture of data) {
+                  // const col = document.createElement("div");
+                  // col.className = "col"
 
-    // Alternativa (tentativo) Ciclo for
-    // for (let i = 0; i < data.length; i++) {
-    //   const picture = data[i];
-    //   const col = document.createElement("div");
-    //   col.className = "col";
+                  // Alternativa (tentativo) Ciclo for
+                  // for (let i = 0; i < data.length; i++) {
+                  //   const picture = data[i];
+                  //   const col = document.createElement("div");
+                  //   col.className = "col";
 
-    // Inserisco all’interno della colonna una card
+    // Inserisco una card all’interno della colonna
     // Nell’immagine metto l’URL fornito dall’API, il testo sarà recuperato sempre dall'API sfruttando title
     // Aggiungo direttamente in HTML la card
         col.innerHTML = `
